@@ -1,0 +1,26 @@
+{
+  "name": "contact-book",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devColeman/Contact-Book.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devColeman/Contact-Book/issues"
+  },
+  "homepage": "https://github.com/devColeman/Contact-Book#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.0.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongo": "^0.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
