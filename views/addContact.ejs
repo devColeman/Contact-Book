@@ -9,9 +9,10 @@
     <a href="/">Home</a>
     <a href="/contact-list">Contact List</a>
     <h1>Contact page</h1>
-    <form action="/addNewPerson">
+    <form action="/addNewPerson" method="POST"
+    >
         <label for="userName">Name</label>
-        <input type="text" placeholder="test" name="thing" id="userName">
+        <input type="text" name="name" id="userName">
         <br>
         <label for="phoneNumber">Phone Number</label>
         <input type="tel" name="phoneNumber" id="phoneNumber">

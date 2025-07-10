@@ -6,8 +6,9 @@ const PORT = process.env.PORT
 const path = require('path');
 
 app.use(express.static('public'))
-app.use(express.urlencoded({extended: true }))
+
 app.use(express.json())
+app.use(express.urlencoded({extended: true }))
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res)=>{
@@ -22,10 +23,10 @@ app.get('/add-contact', (req, res)=>{
     res.render('addContact.ejs')
 })
 
-app.get('/addNewPerson', (req, res)=>{
-    console.log(req.body)
-    console.log(res.body)
-    res.redirect('/add-Contact')
+app.post('/addNewPerson', (req, res)=>{
+    console.log(req.body);
+    res.redirect('/')
+
 
 })
 
