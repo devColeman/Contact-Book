@@ -22,12 +22,14 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
         db = client.db(dbName)
     })
 
-app.get('/', (req, res)=>{
-     res.render('index.ejs')
+app.get('/',async (req, res)=>{
+    const contactItems = await db.collection('contactBook').find().toArray()
+     res.render('index.ejs',{contacts: contactItems } )
 })
 
-app.get('/contact-list', (req, res)=>{
-    res.render('list.ejs')
+app.get('/contact-list', async (req, res)=>{
+    const contactItems = await db.collection('contactBook').find().toArray()
+    res.render('list.ejs',{contacts: contactItems})
 })
 
 app.get('/add-contact', (req, res)=>{
@@ -35,8 +37,13 @@ app.get('/add-contact', (req, res)=>{
 })
 
 app.post('/addNewPerson', (req, res)=>{
-    console.log(req.body);
-    res.redirect('/')
+    db.collection(`${dbName}`).insertOne({name: req.body.name, phoneNumber: req.body.phoneNumber, email: req.body.email})
+    
+    .then(result => {
+        console.log('Contact Added')
+        res.redirect('/')
+    })
+    .catch(error => console.error(error))
 
 
 })
