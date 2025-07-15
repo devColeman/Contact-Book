@@ -11,11 +11,16 @@
     <a href="/add-contact">Add a Contact</a>
     <h1>contact list</h1>
     <% for(let i = 0; i < contacts.length; i++) {%>
-        <div>   
+        <div class="<%= contacts[i]._id %>">
+               
             <p><%= contacts[i].name %></p>
             <p><%= contacts[i].phoneNumber %></p>
             <p><%= contacts[i].email %></p>
+            <a href="/editContact">Edit</a>
         </div>
      <% } %>
+     
 </body>
 </html>
+
+<!-- add like contacts and remove then add edit feature -->
