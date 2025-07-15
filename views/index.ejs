@@ -12,11 +12,14 @@
     <h1>Your Favorite Contacts</h1>
    
         <% for(let i = 0; i < contacts.length; i++) {%>
-            <div>   
-                <p><%= contacts[i].name %></p>
-                <p><%= contacts[i].phoneNumber %></p>
-                <p><%= contacts[i].email %></p>
-            </div>
+            <% if(contacts[i].favorite == true) {%> 
+                <div>   
+                    <p><%= contacts[i].name %></p>
+                    <p><%= contacts[i].phoneNumber %></p>
+                    <p><%= contacts[i].email %></p>
+                </div>
+            <%}%>
+            
          <% } %>
     
    

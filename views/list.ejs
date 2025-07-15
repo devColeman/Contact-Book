@@ -11,15 +11,16 @@
     <a href="/add-contact">Add a Contact</a>
     <h1>contact list</h1>
     <% for(let i = 0; i < contacts.length; i++) {%>
-        <div class="<%= contacts[i]._id %>">
+        <div>
                
-            <p><%= contacts[i].name %></p>
+            <p class="<%= contacts[i]._id %>"><%= contacts[i].name %></p>
             <p><%= contacts[i].phoneNumber %></p>
             <p><%= contacts[i].email %></p>
-            <a href="/editContact">Edit</a>
+            <a class="favoriteIcon"  href="/editContact">⭐</a>
         </div>
      <% } %>
      
+     <script src="js/main.js"></script>
 </body>
 </html>
 

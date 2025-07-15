@@ -36,8 +36,23 @@ app.get('/add-contact', (req, res)=>{
     res.render('addContact.ejs')
 })
 
+app.put('/favorite', (req, res) => {
+    
+   console.log(req.body)
+    // db.collection('contactBook').updateOne({thing: req.body.itemFromJS},{
+    //     $set: {
+    //         favorite: true
+    //       }
+              
+    // })
+    
+    res.json('Marked Complete')
+})
+
+
+
 app.post('/addNewPerson', (req, res)=>{
-    db.collection(`${dbName}`).insertOne({name: req.body.name, phoneNumber: req.body.phoneNumber, email: req.body.email})
+    db.collection(`${dbName}`).insertOne({name: req.body.name, phoneNumber: req.body.phoneNumber, email: req.body.email, favorite: false})
     
     .then(result => {
         console.log('Contact Added')
