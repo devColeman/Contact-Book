@@ -36,16 +36,23 @@ app.get('/add-contact', (req, res)=>{
     res.render('addContact.ejs')
 })
 
+
+app.put('/unFavorite', (req, res) => {
+    console.log(req.body.itemFromJS)
+ 
+    db.collection('contactBook').updateOne({name:  req.body.itemFromJS},{
+      $set: {
+          favorite: false
+        }})
+  res.json('Marked Complete')
+})
+
 app.put('/favorite', (req, res) => {
-    
-   console.log(req.body)
-    // db.collection('contactBook').updateOne({thing: req.body.itemFromJS},{
-    //     $set: {
-    //         favorite: true
-    //       }
-              
-    // })
-    
+ 
+      db.collection('contactBook').updateOne({name:  req.body.itemFromJS},{
+        $set: {
+            favorite: true
+          }})
     res.json('Marked Complete')
 })
 
