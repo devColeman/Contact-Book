@@ -1,9 +1,7 @@
-console.log('Hey does this thing work?')
+
 
 const favoriteIcon = document.querySelectorAll('.favoriteIcon')
 const unFavoriteIcon = document.querySelectorAll('.unFavoriteIcon')
-
-console.log(unFavoriteIcon)
 
 Array.from(unFavoriteIcon).forEach((element)=>{
     element.addEventListener('click', unFavoriteContact)
@@ -11,7 +9,6 @@ Array.from(unFavoriteIcon).forEach((element)=>{
 
 async function unFavoriteContact() {
     let unFavoriteIcons = this.parentNode.childNodes[1].innerHTML
-   
     try{
         const response = await fetch('/unFavorite', {
             method: 'put',
@@ -25,7 +22,7 @@ async function unFavoriteContact() {
         console.log(data)
          if (response.ok) {
             console.log('before reload')
-            location.reload()
+            location.reload(true)
         } else {
             console.error('Failed to favorite contact')
         }
@@ -60,7 +57,7 @@ async function favoriteContact() {
         console.log(data)
          if (response.ok) {
             console.log('before reload')
-            location.reload()
+            location.reload(true)
         } else {
             console.error('Failed to favorite contact')
         }

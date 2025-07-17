@@ -12,16 +12,16 @@
     <h1>contact list</h1>
     <% for(let i = 0; i < contacts.length; i++) {%>
         <div>
-            <% if(contacts[i].favorite == true) {%>
-                <p>⭐</p>
-            <%} %>
-            add a reload so the star gets add on maybe add margin so the item doesnt take make more space
+           
+            
             <p class="<%= contacts[i]._id %>"><%= contacts[i].name %></p>
             <p><%= contacts[i].phoneNumber %></p>
             <p><%= contacts[i].email %></p>
             <button class="favoriteIcon"  >Favorite</button>
-            <button class="unFavoriteIcon"  href="#">Unfavorite</button>
-
+            <button class="unFavoriteIcon" >Unfavorite</button>
+            <% if(contacts[i].favorite == true) {%>
+                <span>⭐</span>
+            <%}%>
         </div>
      <% } %>
      
