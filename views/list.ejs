@@ -19,6 +19,9 @@
             <p><%= contacts[i].email %></p>
             <button class="favoriteIcon"  >Favorite</button>
             <button class="unFavoriteIcon" >Unfavorite</button>
+            <form action="/editPage" method="GET">
+                <button type="submit" name="contactName" value="<%= contacts[i].name %>">Edit</button>
+            </form>
             <% if(contacts[i].favorite == true) {%>
                 <span>⭐</span>
             <%}%>

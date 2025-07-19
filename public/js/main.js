@@ -3,6 +3,7 @@
 const favoriteIcon = document.querySelectorAll('.favoriteIcon')
 const unFavoriteIcon = document.querySelectorAll('.unFavoriteIcon')
 
+
 Array.from(unFavoriteIcon).forEach((element)=>{
     element.addEventListener('click', unFavoriteContact)
 })

@@ -36,6 +36,15 @@ app.get('/add-contact', (req, res)=>{
     res.render('addContact.ejs')
 })
 
+app.get('/editPage',async (req, res) => {
+
+    //  const contactItems = await db.collection('contactBook').find().toArray()
+    const contactName = req.query.contactName;
+
+    // the name is in the contactName we need to make the form and then update on the backend
+    res.render('editPage.ejs')
+})
+
 
 app.put('/unFavorite', (req, res) => {
     console.log(req.body.itemFromJS)
