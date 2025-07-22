@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
+
 require('dotenv').config()
 const PORT = process.env.PORT
 const MongoClient = require('mongodb').MongoClient
+const { ObjectId } = require('mongodb');
 
 const path = require('path');
 
@@ -37,14 +39,20 @@ app.get('/add-contact', (req, res)=>{
 })
 
 app.get('/editPage',async (req, res) => {
-
-    //  const contactItems = await db.collection('contactBook').find().toArray()
     const contactName = req.query.contactName;
-
-    // the name is in the contactName we need to make the form and then update on the backend
-    res.render('editPage.ejs')
+    const contactItems = await db.collection('contactBook').find({name: `${contactName}`}).toArray()
+    res.render('editPage.ejs', {contacts: contactItems})
 })
 
+app.get('/updateContact', async  (req, res) => {
+     await db.collection(`contactBook`).updateOne({ _id: new ObjectId(req.query.id)},{
+        $set: {
+            name: `${req.query.name}`,
+            email: `${req.query.email}`,
+            phoneNumber: `${req.query.phoneNumber}`  
+          }})
+    res.redirect('/contact-list')
+})
 
 app.put('/unFavorite', (req, res) => {
     console.log(req.body.itemFromJS)

@@ -6,6 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-<h1>hello</h1>
+<h1>Update Information</h1>
+<form action="/updateContact" method="PUT">
+    <input type="hidden" value="<%= contacts[0]._id %>" name="id" >
+    <label for="userName">Name</label>
+    <input type="text" name="name" value='<%= contacts[0].name %>' id="userName">
+    <br>
+    <label for="phoneNumber">Phone Number</label>
+    <input type="tel" name="phoneNumber" value='<%= contacts[0].phoneNumber %>' id="phoneNumber">
+    <br>
+    <label for="email">Email</label>
+    <input type="email" name="email" value='<%= contacts[0].email %>' id="email">
+    <br>
+    <input type="submit">
+</form>
 </body>
 </html>
