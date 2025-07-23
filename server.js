@@ -55,7 +55,6 @@ app.get('/updateContact', async  (req, res) => {
 })
 
 app.put('/unFavorite', (req, res) => {
-    console.log(req.body.itemFromJS)
     db.collection('contactBook').updateOne({name:  req.body.itemFromJS},{
       $set: {
           favorite: false

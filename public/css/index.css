@@ -1,0 +1,46 @@
+:root {
+    --background-color: #F9FAFB;
+    --prinmary-blue: #2563EB;
+    --button-hover: #1D4ED8;
+    --text-color: #111827;
+    --button-color: #FFFFFF;
+    --card-border: #E5E7EB;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+h1 {
+    color: purple;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    height: 30px;
+}
+
+.nav > a {
+     text-decoration: none;
+     border: none;
+     padding: 10px 16px;
+    border-radius: 8px;
+    transition: var(--background-color) 0.3s ease;
+     color: var(--button-color);
+     background-color: var(--prinmary-blue);
+}
+
+.nav > a:hover {
+    background-color: var(--button-hover);
+}
+
+div {
+    margin-bottom: 5px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
