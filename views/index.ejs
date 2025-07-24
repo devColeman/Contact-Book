@@ -11,19 +11,20 @@
         <a href="/contact-list">Contact List</a>
         <a href="/add-contact">Add a Contact</a>
     </div>
-    <h1>Your Favorite Contacts</h1>
-   
+    <h1>Favorite Contacts</h1>
+   <div class="holder">
         <% for(let i = 0; i < contacts.length; i++) {%>
             <% if(contacts[i].favorite == true) {%> 
-                <div>   
-                    <p><%= contacts[i].name %></p>
-                    <p><%= contacts[i].phoneNumber %></p>
-                    <p><%= contacts[i].email %></p>
+                <div class="contactList">   
+                    <p class="mainName"><%= contacts[i].name %></p>
+                    <span class="lineUnder"></span>
+                    <p>Phone <%= contacts[i].phoneNumber %></p>
+                    <p>Email <%= contacts[i].email %></p>
                 </div>
             <%}%>
             
          <% } %>
-    
+        </div>
    
     
 </body>

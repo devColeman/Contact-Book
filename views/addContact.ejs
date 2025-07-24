@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Contact</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <a href="/">Home</a>
-    <a href="/contact-list">Contact List</a>
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/contact-list">Contact List</a>
+    </div>
     <h1>Contact page</h1>
-    <form action="/addNewPerson" method="POST"
-    >
+    <form action="/addNewPerson" method="POST">
         <label for="userName">Name</label>
         <input type="text" name="name" id="userName">
         <br>
