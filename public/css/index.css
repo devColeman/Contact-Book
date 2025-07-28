@@ -77,3 +77,15 @@ h1 {
     display: flex;
     justify-content: space-evenly;
 }
+
+.list-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column;
+    border: 2px solid var(--card-border);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 80%;
+    */
+}

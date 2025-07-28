@@ -13,9 +13,12 @@
 </div>
 
     <h1>contact list</h1>
+    <div class="list-holder">
+
+    
     <% for(let i = 0; i < contacts.length; i++) {%>
-        <div class="holder">
-            <div class="contactList">
+        
+            <div class="" >
             <p class="<%= contacts[i]._id %> mainName"><%= contacts[i].name %></p>
             <div class="info">
                 <p><%= contacts[i].phoneNumber %></p>
@@ -34,9 +37,9 @@
                 
             <%}%>
         </div>
-        </div>
+        
      <% } %>
-     
+    </div>
      <script src="js/main.js"></script>
 </body>
 </html>
