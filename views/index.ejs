@@ -18,8 +18,11 @@
                 <div class="contactList">   
                     <p class="mainName"><%= contacts[i].name %></p>
                     <span class="lineUnder"></span>
-                    <p>Phone <%= contacts[i].phoneNumber %></p>
-                    <p>Email <%= contacts[i].email %></p>
+                    <div class="info">
+                        <p>Phone: <%= contacts[i].phoneNumber %></p>
+                        <p>Email: <%= contacts[i].email %></p>
+                    </div>
+
                 </div>
             <%}%>
             

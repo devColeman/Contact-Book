@@ -14,12 +14,16 @@
 
     <h1>contact list</h1>
     <% for(let i = 0; i < contacts.length; i++) {%>
-        <div>
-           
-            
-            <p class="<%= contacts[i]._id %>"><%= contacts[i].name %></p>
-            <p><%= contacts[i].phoneNumber %></p>
-            <p><%= contacts[i].email %></p>
+        <div class="holder">
+            <div class="contactList">
+            <p class="<%= contacts[i]._id %> mainName"><%= contacts[i].name %></p>
+            <div class="info">
+                <p><%= contacts[i].phoneNumber %></p>
+                <p><%= contacts[i].email %></p>
+            </div>
+            <div class="buttonDivs">
+                
+            </div>
             <button class="favoriteIcon"  >Favorite</button>
             <button class="unFavoriteIcon" >Unfavorite</button>
             <form action="/editPage" method="GET">
@@ -28,6 +32,7 @@
             <% if(contacts[i].favorite == true) {%>
                 <span>⭐</span>
             <%}%>
+        </div>
         </div>
      <% } %>
      
